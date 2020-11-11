@@ -25,15 +25,97 @@ namespace Probleme_cu_numere
             Console.ReadKey();
         }
                 static void Main(string[] args)
-        { 
-                {
+        {
+           // int a = 2, b = 3;
+            //System.Console.WriteLine("a = {0}  b = {1}", a, b);
+
+            //Swap(ref a, ref b);
+
+            //System.Console.WriteLine("a = {0}  b = {1}", a, b);
+            {
                 //ecuatieGrad1();
                 //ecuatieGrad2();
                 //divizoriiLuiK();
-               // anBisect();
-                }
+                // anBisect();
+                //laturile1Triunghi();
+                //Swap(ref a, ref b);
+                //divizoriiLuiN();
+                //primDaSauNu();
+                ordineInversa();
 
-            
+               
+            }
+
+        }
+
+        private static void ordineInversa()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int c1 = n % 10;
+            int c2 = (n % 100) / 10;
+            int c3 = (n % 1000) / 100;
+            Console.WriteLine("{0},{1},{2}", c1, c2, c3);
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Test de primalitate: determinati daca un numar n este prim.
+        /// </summary>
+        private static void primDaSauNu()
+        {
+            int d, n, nr=0;
+           n = int.Parse(Console.ReadLine());
+           for (d = 2; d <= n / 2; d++);
+            {
+                if (n % d == 0)
+                    nr++;
+            }
+            if (nr == 0)
+                Console.WriteLine("Numarul este prim");
+            else
+                Console.WriteLine("Numarul nu este prim");
+            Console.ReadKey();
+
+
+        }
+        /// <summary>
+        /// Afisati toti divizorii numarului n. 
+        /// </summary>
+        private static void divizoriiLuiN()
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 2; i <= n / 2; i++) 
+            {
+                if (n % i == 0) 
+                Console.WriteLine(i);
+                Console.ReadKey();
+            }
+        }
+
+        private static void Swap(ref int x, ref int y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Detreminati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi. 
+        /// </summary>
+        private static void laturile1Triunghi()
+        {
+            int a, b, c;
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c= int.Parse(Console.ReadLine());
+            if (a + b > c && a + c > b && b + c > a)
+                Console.WriteLine("Da");
+            else
+                Console.WriteLine("Nu");
+            Console.ReadKey();
+                    
         }
 
         private static void anBisect()
